@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
   double preco = 0.0;
 
   Color corPreco(double precoProduto) {
-    return precoProduto > 100 ? Colors.red : Colors.green;
+    return precoProduto > 100 ? Colors.green : Colors.red;
   }
 
   Future<List<dynamic>> _buscarProdutos() async {
