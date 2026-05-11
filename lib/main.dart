@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
+import 'cadastro.dart';
+import 'login.dart';
+
 Future<void> main() async {
 
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,12 +20,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final session = Supabase.instance.client.auth.currentSession;
+
     return MaterialApp(
+      
+      debugShowCheckedModeBanner: false,
+
       title: 'Flutter Supabase',
       theme: ThemeData(
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),      
-      home: const MyHomePage(title: 'Inventário Página'),
+      home: session != null ? const MyHomePage(title: 'Inventário Página') : const MyHomePage(title: 'Login'),
     );
   }
 }
