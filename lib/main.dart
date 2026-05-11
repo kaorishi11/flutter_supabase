@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
     final session = Supabase.instance.client.auth.currentSession;
 
     return MaterialApp(
-      
+
       debugShowCheckedModeBanner: false,
 
       title: 'Flutter Supabase',
